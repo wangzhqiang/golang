@@ -7,7 +7,9 @@ func main() {
 		PI = 3.1415926
 		s  = 3.0
 		m  = 3.5
+		n  = "hello"
 	)
+
 	const (
 		A = iota
 		B
