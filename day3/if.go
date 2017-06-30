@@ -15,4 +15,11 @@ func main() {
 	}
 	fmt.Println(n)
 
+	if a == "1" {
+		fmt.Println("yes")
+	} else if a == "2" {
+		fmt.Println("now")
+	} else {
+		fmt.Println(a)
+	}
 }
