@@ -3,6 +3,10 @@ package main
 import "fmt"
 
 func main() {
+        defer func() {
+	 err:= recover()
+         fmt.Println(err)
+}()
 	print()
 }
 
