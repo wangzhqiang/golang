@@ -8,8 +8,11 @@ func main() {
 	b := a[0:2]
 	c := a[1:3]
 	fmt.Println(b, c)
+	fmt.Println(&a[0])
 
 	b[0] = "zhao"
 	fmt.Println(b, c)
 	fmt.Println(a)
+	fmt.Println(&a[0])
+	fmt.Println(&b[0],&c[0])
 }
