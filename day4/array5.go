@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unsafe"
+)
 
 func main() {
 	a1 := [3]int{1, 2, 3}
@@ -8,6 +11,7 @@ func main() {
 	var a2 [3]int
 	a2 = a1
 	fmt.Println(a2)
-	fmt.Println(a1==a2)
-	fmt.Println(&a1[0],&a2[0])
+	fmt.Println(a1 == a2)
+	fmt.Println(&a1[0], &a2[0])
+	fmt.Println(unsafe.Sizeof(a1))
 }
