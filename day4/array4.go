@@ -7,4 +7,6 @@ func main() {
 	for _, k := range a {
 		fmt.Println(k)
 	}
+        q := [...]int{2,3,6}
+        fmt.Println(q)
 }
