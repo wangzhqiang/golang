@@ -9,4 +9,5 @@ func main() {
 	a2 = a1
 	fmt.Println(a2)
 	fmt.Println(a1==a2)
+	fmt.Println(&a1[0],&a2[0])
 }
