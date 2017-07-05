@@ -9,4 +9,7 @@ func main() {
 	}
         q := [...]int{2,3,6}
         fmt.Println(q)
+         
+        p := [...]int{4:10,10:-1}
+        fmt.Println(p)
 }
