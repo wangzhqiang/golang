@@ -14,7 +14,8 @@ func main() {
 	}
 	defer db.Close()
 
-	//读取数据 1.从连接池中请求一个连接 2.执行查询的sql语句 3.将数据库连接的所属权传递给Result结果集
+	//多行读取数据 1.从连接池中请求一个连接 2.执行查询的sql语句 3.将数据库连接的所属权传递给Result结果集
+	//Query方法为读取多行数据
 	rows,err := db.Query("SELECT world FROM qiang.hello")
 	if err != nil {
 		log.Fatal(err)
@@ -49,5 +50,25 @@ func main() {
 	if err = rows.Err(); err!=nil {    //为了检查是否迭代正常退出还是异常退出 需要检查rows.Err
 		log.Fatal(err)
 	}
+
+	//读取单行数据
+	var s string
+	err = db.QueryRow("SELECT world FROM qiang.hello LIMIT 1").Scan(&s)
+	if err != nil{
+		if err == sql.ErrNoRows{           //查询为空 会出发sql.ErrNoRows错误
+			log.Println("This is no row")
+		} else {
+			log.Fatal(err)
+		}
+	}
+	log.Println("find a row",s)
+
+	//rows.Scan   结果方法集Scan是把数据库取出的字段值赋值给指定的数据结构 参数为空接口  意味着可以传入任何值
+	var var1, var2 string
+	err = rows.Scan(var1,var2)
+
+	//空值处理
+
+
 }
 
