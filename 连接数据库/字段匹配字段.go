@@ -51,7 +51,7 @@ func main() {
 		results = append(results,row)
 	}
 
-	for k,v := range results{  
+	for k,v := range results{
 		fmt.Println(k,v)
 	}
 }
