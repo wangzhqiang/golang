@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
-func main() {
-    fmt.Println("hello world!")
+func main(){
+    for i := 0; i < 4; i++ {
+        defer fmt.Print(i)
     }
+}
